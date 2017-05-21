@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,18 +63,19 @@ public class Summary extends Fragment {
         else if (currency.equals("Pound")){
             curr= "\u00a3";
         }
-        String b = curr+Double.toString(bill);
-        String t = curr+Double.toString(tipAmount);
-        String fB = curr+Double.toString(finalAmount);
+        String b = curr+String.format("%.2f", bill);
+        String t = curr+String.format("%.2f", tipAmount);
+        String fB = curr+String.format("%.2f", finalAmount);
         billAmount.setText(b);
         totalTip.setText(t);
         finalBill.setText(fB);
 
         if(people > 1) {
             Double perPerson = finalAmount/people;
+            Log.i("PerPerson", ""+perPerson);
             Double tipDivided = tipAmount/people;
-            String pP = curr+Double.toString(perPerson);
-            String tD = curr+Double.toString(tipDivided);
+            String pP = curr+String.format("%.2f", perPerson);
+            String tD = curr+String.format("%.2f", tipDivided);
             peoplePay.setText(pP);
             tipPerPerson.setText(tD);
             personLayout.setVisibility(View.VISIBLE);
