@@ -13,139 +13,152 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/colorAccent"
+        app:itemBackground="@color/colorPrimary"
         app:menu="@menu/navigation" />
 
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:animateLayoutChanges="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/blue">-->
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="28dp"
-                android:text="Welcome"
-                android:textAllCaps="true"
-                android:textSize="24sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:text="Welcome"-->
+                <!--android:textAllCaps="true"-->
+                <!--android:textSize="24sp" />-->
 
-            <LinearLayout
-                android:id="@+id/basic_summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/title"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:id="@+id/basic_summary"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/title"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:orientation="vertical">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:orientation="horizontal">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="horizontal">-->
 
-                    <TextView
-                        android:id="@+id/bill_header"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Bill Amount"
-                        android:textAllCaps="true"
-                        android:textSize="14sp" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/bill_header"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:text="Bill Amount"-->
+                        <!--android:textAllCaps="true"-->
+                        <!--android:textSize="14sp" />-->
 
-                    <EditText
-                        android:id="@+id/bill_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Enter the total bill"
-                        android:inputType="number|numberDecimal"
-                        android:padding="5dp"
-                        android:textAllCaps="false"
-                        android:textSize="14sp" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/bill_amount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ems="10"-->
+                        <!--android:hint="Enter the total bill"-->
+                        <!--android:inputType="number|numberDecimal"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textAlignment="viewStart"-->
+                        <!--android:textAllCaps="false"-->
+                        <!--android:textColor="@color/colorPrimaryDark"-->
+                        <!--android:textColorHint="@android:color/background_light"-->
+                        <!--android:textSize="14sp" />-->
 
-                </LinearLayout>
+                <!--</LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:orientation="horizontal">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="horizontal">-->
 
-                    <TextView
-                        android:id="@+id/tip_header"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Tip Percentage"
-                        android:textAllCaps="true"
-                        android:textSize="14sp" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/tip_header"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:text="Tip Percentage"-->
+                        <!--android:textAllCaps="true"-->
+                        <!--android:textSize="14sp" />-->
 
-                    <EditText
-                        android:id="@+id/tip_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Enter tip amount"
-                        android:inputType="number|numberDecimal"
-                        android:padding="5dp"
-                        android:textAllCaps="false"
-                        android:textSize="14sp" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/tip_amount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ems="10"-->
+                        <!--android:hint="Enter tip amount"-->
+                        <!--android:inputType="number|numberDecimal"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textAlignment="viewStart"-->
+                        <!--android:textAllCaps="false"-->
+                        <!--android:textColor="@color/colorPrimaryDark"-->
+                        <!--android:textColorHint="@android:color/background_light"-->
+                        <!--android:textSize="14sp" />-->
 
-                </LinearLayout>
+                <!--</LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_centerInParent="true"
-                    android:orientation="horizontal">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="horizontal">-->
 
-                    <TextView
-                        android:id="@+id/number_header"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Number of People"
-                        android:textAllCaps="true"
-                        android:textSize="14sp" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/number_header"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:text="Number of People"-->
+                        <!--android:textAllCaps="true"-->
+                        <!--android:textSize="14sp" />-->
 
-                    <EditText
-                        android:id="@+id/people_amount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:hint="Enter # of people paying"
-                        android:inputType="number"
-                        android:padding="5dp"
-                        android:textAllCaps="false"
-                        android:textSize="14sp" />
+                    <!--<EditText-->
+                        <!--android:id="@+id/people_amount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:ems="10"-->
+                        <!--android:hint="Enter # of people paying"-->
+                        <!--android:inputType="number"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:textAlignment="viewStart"-->
+                        <!--android:textAllCaps="false"-->
+                        <!--android:textColor="@color/colorPrimaryDark"-->
+                        <!--android:textColorHint="@android:color/background_light"-->
+                        <!--android:textSize="14sp" />-->
 
-                </LinearLayout>
-            </LinearLayout>
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
 
-            <Button
-                android:id="@+id/calc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/basic_summary"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="28dp"
-                android:onClick="calculateTip"
-                android:text="Get TIp" />
+            <!--<Button-->
+                <!--android:id="@+id/calc"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/basic_summary"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="28dp"-->
+                <!--android:background="@drawable/buttonbg"-->
+                <!--android:onClick="calculateTip"-->
+                <!--android:text="Get TIp" />-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
     </FrameLayout>
 
 </LinearLayout>

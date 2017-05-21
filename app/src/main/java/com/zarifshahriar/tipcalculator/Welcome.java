@@ -6,10 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Suggestion extends Fragment {
+/**
+ * Created by Zarif on 2017-05-21.
+ */
 
-    public static Suggestion newInstance() {
-        Suggestion fragment = new Suggestion();
+public class Welcome extends Fragment {
+
+    public static Welcome newInstance() {
+        Welcome fragment = new Welcome();
         return fragment;
     }
 
@@ -21,7 +25,6 @@ public class Suggestion extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.suggestion_frag, container, false);
+        return inflater.inflate(R.layout.welcome_frag, container, false);
     }
-
 }

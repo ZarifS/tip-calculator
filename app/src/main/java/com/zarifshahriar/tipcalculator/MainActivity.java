@@ -1,6 +1,7 @@
 package com.zarifshahriar.tipcalculator;
 
-import android.content.Intent;
+import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final Context context = this;
     private EditText bill;
     private EditText tip;
     private EditText people;
@@ -22,17 +24,22 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    return true;
+                    selectedFragment = Welcome.newInstance();
+                    break;
                 case R.id.navigation_help:
-                    return true;
+                    selectedFragment = Suggestion.newInstance();
+                    break;
                 case R.id.navigation_settings:
-                    return true;
+                    break;
             }
-            return false;
+            android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.content, selectedFragment);
+            transaction.commit();
+            return true;
         }
-
     };
 
     @Override
@@ -41,9 +48,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.content, Welcome.newInstance());
+        transaction.commit();
     }
 
-    public void calculateTip(View view){
+    public void getTip(View view){
         bill = (EditText) findViewById(R.id.bill_amount);
         tip = (EditText) findViewById(R.id.tip_amount);
         people = (EditText) findViewById(R.id.people_amount);
@@ -54,12 +64,16 @@ public class MainActivity extends AppCompatActivity {
             String tipAmount = tip.getText().toString();
             String peopleAmount = people.getText().toString();
             String billAmount = bill.getText().toString();
-            Intent intent = new Intent(this, Summary.class);
-            intent.putExtra("billAmount", billAmount);
-            intent.putExtra("tipAmount", tipAmount);
-            intent.putExtra("peopleAmount", peopleAmount);
+            Bundle bundle = new Bundle();
+            bundle.putString("billAmount", billAmount);
+            bundle.putString("tipAmount", tipAmount);
+            bundle.putString("peopleAmount", peopleAmount);
             Log.i("In calculate tip", "Sending to summary page");
-            startActivity(intent);
+            Fragment fragobj = new Summary();
+            fragobj.setArguments(bundle);
+            android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.content, fragobj);
+            transaction.commit();
         }
 
     }
