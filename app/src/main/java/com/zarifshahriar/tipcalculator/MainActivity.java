@@ -2,6 +2,7 @@ package com.zarifshahriar.tipcalculator;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText bill;
     private EditText tip;
     private EditText people;
+    private EditText defaultTip;
+    private Spinner mSpinner;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -70,13 +74,27 @@ public class MainActivity extends AppCompatActivity {
             bundle.putString("tipAmount", tipAmount);
             bundle.putString("peopleAmount", peopleAmount);
             Log.i("In calculate tip", "Sending to summary page");
-            Fragment fragobj = new Summary();
-            fragobj.setArguments(bundle);
+            Fragment summary = new Summary();
+            summary.setArguments(bundle);
             android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.replace(R.id.content, fragobj);
+            transaction.replace(R.id.content, summary);
             transaction.commit();
         }
 
+    }
+
+    public void save(View view){
+        Log.i("In Save:", "Beginning saving");
+        defaultTip = (EditText) findViewById(R.id.defaultTip);
+        mSpinner = (Spinner) findViewById(R.id.spinner);
+        String curr = mSpinner.getSelectedItem().toString();
+        String tip = defaultTip.getText().toString();
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("DefaultTip", tip);
+        editor.putString("Currency", curr);
+        editor.apply();
+        Log.i("In Save:", "Finished saving");
     }
 
     public boolean validateInput(){

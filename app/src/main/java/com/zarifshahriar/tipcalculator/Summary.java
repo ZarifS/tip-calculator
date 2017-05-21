@@ -1,6 +1,8 @@
 package com.zarifshahriar.tipcalculator;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,20 +53,29 @@ public class Summary extends Fragment {
     private void calcAmounts(Double bill, Double tip, int people) {
         Double tipAmount = bill * tip/100;
         Double finalAmount = tipAmount + bill;
-
-        System.out.println((Double.toString(bill)));
-        System.out.println((Double.toString(tipAmount)));
-        System.out.println((Double.toString(finalAmount)));
-
-        billAmount.setText((Double.toString(bill)));
-        totalTip.setText(Double.toString(tipAmount));
-        finalBill.setText(Double.toString(finalAmount));
+        String curr ="$";
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        String currency = sharedPref.getString("Currency", "");
+        if(currency.equals("Euro")){
+            curr="\u20ac";
+        }
+        else if (currency.equals("Pound")){
+            curr= "\u00a3";
+        }
+        String b = curr+Double.toString(bill);
+        String t = curr+Double.toString(tipAmount);
+        String fB = curr+Double.toString(finalAmount);
+        billAmount.setText(b);
+        totalTip.setText(t);
+        finalBill.setText(fB);
 
         if(people > 1) {
             Double perPerson = finalAmount/people;
             Double tipDivided = tipAmount/people;
-            peoplePay.setText(Double.toString(perPerson));
-            tipPerPerson.setText(Double.toString(tipDivided));
+            String pP = curr+Double.toString(perPerson);
+            String tD = curr+Double.toString(tipDivided);
+            peoplePay.setText(pP);
+            tipPerPerson.setText(tD);
             personLayout.setVisibility(View.VISIBLE);
         }
         else{
