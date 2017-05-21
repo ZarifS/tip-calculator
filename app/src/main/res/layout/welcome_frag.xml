@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical"
     tools:context="com.zarifshahriar.tipcalculator.Welcome">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:background="@drawable/blue">
 
         <TextView
@@ -29,6 +31,7 @@
             android:layout_below="@+id/title"
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
+            android:background="#08ffffff"
             android:orientation="vertical">
 
             <LinearLayout
@@ -137,6 +140,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
             android:background="@drawable/buttonbg"
+            android:elevation="24dp"
             android:onClick="getTip"
             android:text="Get TIp" />
 
