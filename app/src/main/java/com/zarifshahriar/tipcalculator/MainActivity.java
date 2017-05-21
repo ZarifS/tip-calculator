@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = Suggestion.newInstance();
                     break;
                 case R.id.navigation_settings:
+                    selectedFragment= Settings.newInstance();
                     break;
             }
             android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();

@@ -2,7 +2,6 @@ package com.zarifshahriar.tipcalculator;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +35,8 @@ public class Suggestion extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 tipPercent = 10.0 + (v*2);
-                Log.i("Rating changed", "" + v + "" + "Should tip" + tipPercent);
-                text = Double.toString(tipPercent);
-                tip.setText(text+"%");
+                text = Double.toString(tipPercent) + "%";
+                tip.setText(text);
             }
         });
         return rootView;
