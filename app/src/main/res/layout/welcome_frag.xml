@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:background="@drawable/blue">
+        android:background="@drawable/blue"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/title"
@@ -22,7 +24,7 @@
             android:layout_marginTop="28dp"
             android:text="Welcome"
             android:textAllCaps="true"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <LinearLayout
             android:id="@+id/basic_summary"
@@ -44,25 +46,25 @@
                     android:id="@+id/bill_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="40"
                     android:padding="5dp"
-                    android:text="Bill Amount"
+                    android:text="Bill Amount ($)"
                     android:textAllCaps="true"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/bill_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Enter the total bill"
+                    android:ems="4"
+                    android:hint="Enter bill"
                     android:inputType="number|numberDecimal"
                     android:padding="5dp"
-                    android:textAlignment="viewStart"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textColorHint="@android:color/background_light"
-                    android:textSize="14sp" />
+                    android:textColorHint="@color/ratingUnchecked"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -76,25 +78,25 @@
                     android:id="@+id/tip_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="40"
                     android:padding="5dp"
-                    android:text="Tip Percentage"
+                    android:text="Tip Percentage (%)"
                     android:textAllCaps="true"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/tip_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Enter tip amount"
+                    android:ems="4"
+                    android:hint="Enter tip"
                     android:inputType="number|numberDecimal"
                     android:padding="5dp"
-                    android:textAlignment="viewStart"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textColorHint="@android:color/background_light"
-                    android:textSize="14sp" />
+                    android:textColorHint="@color/ratingUnchecked"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -108,26 +110,26 @@
                     android:id="@+id/number_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="40"
                     android:padding="5dp"
                     android:text="Number of People"
                     android:textAllCaps="true"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/people_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Enter # of people paying"
+                    android:ems="4"
+                    android:hint="Enter #"
                     android:inputType="number"
                     android:padding="5dp"
-                    android:textAlignment="viewStart"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textColorHint="@android:color/background_light"
-                    android:textSize="14sp" />
+                    android:textColorHint="@color/ratingUnchecked"
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -142,7 +144,8 @@
             android:background="@drawable/buttonbg"
             android:elevation="24dp"
             android:onClick="getTip"
-            android:text="Get TIp" />
+            android:text="Get TIp"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 

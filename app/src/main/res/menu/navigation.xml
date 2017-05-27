@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_help"
         android:icon="@drawable/ic_help_black_24dp"
-        android:title="Suggestion" />
+        android:title="Tip Suggestion" />
 
     <item
         android:id="@+id/navigation_settings"

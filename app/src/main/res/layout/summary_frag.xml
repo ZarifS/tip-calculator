@@ -22,7 +22,7 @@
                 android:layout_marginTop="28dp"
                 android:text="Summary"
                 android:textAllCaps="true"
-                android:textSize="24sp" />
+                android:textSize="28sp" />
 
             <LinearLayout
                 android:id="@+id/basic_summary"
@@ -48,15 +48,16 @@
                         android:padding="5dp"
                         android:text="Bill Amount"
                         android:textAllCaps="true"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/bill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:ems="4"
                         android:padding="5dp"
-                        android:text="TextView"
-                        android:textAllCaps="true" />
+                        android:textAllCaps="true"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -75,16 +76,16 @@
                         android:padding="5dp"
                         android:text="Tip Percentage"
                         android:textAllCaps="true"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/tip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:ems="4"
                         android:padding="5dp"
-                        android:text="TextView"
-                        android:textAllCaps="true" />
+                        android:textAllCaps="true"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -103,16 +104,16 @@
                         android:padding="5dp"
                         android:text="Total Bill"
                         android:textAllCaps="true"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/total_bill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:ems="4"
                         android:padding="5dp"
-                        android:text="TextView"
-                        android:textAllCaps="true" />
+                        android:textAllCaps="true"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -141,16 +142,17 @@
                         android:padding="5dp"
                         android:text="Tip Per Person"
                         android:textAllCaps="true"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/tip_per_person"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.52"
+                        android:ems="4"
                         android:padding="5dp"
-                        android:text="TextView"
-                        android:textAllCaps="true" />
+                        android:textAllCaps="true"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -168,16 +170,17 @@
                         android:padding="5dp"
                         android:text="Bill Per Person"
                         android:textAllCaps="true"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/bill_per_person"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:ems="4"
                         android:padding="5dp"
-                        android:text="TextView"
-                        android:textAllCaps="true" />
+                        android:textAllCaps="true"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 

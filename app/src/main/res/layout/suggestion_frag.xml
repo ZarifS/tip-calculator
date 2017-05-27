@@ -29,23 +29,16 @@
             android:text="Suggestion"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="We'll help you figure out how much you should tip. "
+            android:text="We'll help you figure out how much \n you should tip. Rate your overall experience \n at the restaurant below."
             android:textAlignment="center"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/info2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rate your overall experience at the restaurant below."
-            android:textAlignment="center" />
+            android:textSize="16sp" />
 
         <RatingBar
             android:id="@+id/ratingBar"

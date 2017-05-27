@@ -47,10 +47,10 @@ public class Settings extends Fragment{
         mSpinner.setAdapter(adapter);
 
         String curr = sharedPref.getString("Currency", "Dollar");
-        if(curr.equals("Dollar")){
+        if(curr.contains("Dollar")){
             mSpinner.setSelection(0);
         }
-        else if (curr.equals("Pound")){
+        else if (curr.contains("Pound")){
             mSpinner.setSelection(2);
         }
         else mSpinner.setSelection(1);

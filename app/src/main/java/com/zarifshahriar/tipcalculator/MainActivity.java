@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
         android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.content, Welcome.newInstance());
         transaction.commit();
@@ -94,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("DefaultTip", tip);
         editor.putString("Currency", curr);
         editor.apply();
+        Toast.makeText(this, "Settings Updated", Toast.LENGTH_SHORT).show();
         Log.i("In Save:", "Finished saving");
     }
 

@@ -6,9 +6,9 @@
     <string name="title_activity_summary">Summary</string>
 
     <string-array name="curr_array">
-        <item>Dollar</item>
-        <item>Euro</item>
-        <item>Pound</item>
+        <item>Dollar($)</item>
+        <item>Euro(€)</item>
+        <item>Pound(£)</item>
     </string-array>
 
 </resources>

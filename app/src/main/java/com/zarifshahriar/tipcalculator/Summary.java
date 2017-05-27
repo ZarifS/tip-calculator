@@ -57,10 +57,10 @@ public class Summary extends Fragment {
         String curr ="$";
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         String currency = sharedPref.getString("Currency", "");
-        if(currency.equals("Euro")){
+        if(currency.contains("Euro")){
             curr="\u20ac";
         }
-        else if (currency.equals("Pound")){
+        else if (currency.contains("Pound")){
             curr= "\u00a3";
         }
         String b = curr+String.format("%.2f", bill);
