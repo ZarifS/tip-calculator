@@ -74,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="60"
                         android:padding="5dp"
-                        android:text="Tip Percentage"
+                        android:text="Tip Amount"
                         android:textAllCaps="true"
                         android:textSize="18sp" />
 
